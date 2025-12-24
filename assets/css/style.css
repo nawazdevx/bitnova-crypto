@@ -834,3 +834,286 @@ address.footer-contact-link {
 .social-link:is(:hover, :focus) {
   color: var(--blue-crayola);
 }
+
+/** ───────────────────────────────────── Media Queries /*/
+/**
+ * ────── responsive for large than 575px screen
+ */
+@media (min-width: 575px) {
+  /* === Custom Property === */
+  :root {
+    /* === Typography === */
+    --fs-1: 4rem;
+    --fs-2: 3.4rem;
+  }
+
+  /* === Reused Styles === */
+  .container {
+    max-width: 540px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  /* === Hero === */
+  .hero-text {
+    --fs-5: 2rem;
+  }
+}
+
+/**
+ * ────── responsive for large than 768px screen
+ */
+@media (min-width: 768px) {
+  /* === Custom Property === */
+  :root {
+    /* === Typography === */
+    --fs-1: 5rem;
+    --fs-2: 4rem;
+  }
+
+  /* === Reused Styles === */
+  .container {
+    max-width: 750px;
+  }
+
+  /* === Hero === */
+  .hero-banner {
+    max-width: max-content;
+    margin-inline: auto;
+  }
+
+  /* === Trend === */
+  .trend-tab .tab-content {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* === Instruction === */
+  .instruction {
+    overflow: hidden;
+  }
+
+  .instruction .section-text {
+    max-width: 40ch;
+    margin-inline: auto;
+  }
+
+  .instruction-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .instruction-card {
+    position: relative;
+  }
+
+  .instruction-card::after {
+    content: '';
+    width: 160px;
+    height: 12px;
+    background-image: url('../images/connect-line.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: absolute;
+    top: 50px;
+    right: -95px;
+  }
+
+  .instruction-list > li:nth-child(even) .instruction-card::after {
+    display: none;
+  }
+
+  /* === App === */
+  .app-banner {
+    max-width: max-content;
+  }
+
+  /* === Footer === */
+  .footer-top .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-brand {
+    grid-column: 1 / 3;
+  }
+
+  .footer-bottom .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .copyright {
+    margin-block-end: 0;
+  }
+}
+
+/**
+ * ────── responsive for large than 992px screen
+ */
+@media (min-width: 992px) {
+  /* === Reused Styles === */
+  .container {
+    max-width: 960px;
+  }
+
+  /* === Header === */
+  .header {
+    padding-block: 18px;
+  }
+
+  .header.active {
+    top: -80px;
+  }
+
+  .header > .container {
+    gap: 50px;
+  }
+
+  .nav-toggle-btn {
+    display: none;
+  }
+
+  .navbar,
+  .navbar.active {
+    all: unset;
+    margin-inline-end: auto;
+  }
+
+  .navbar-list {
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-item:not(:last-child) {
+    border-block-end: none;
+  }
+
+  .navbar-link {
+    font-size: var(--fs-7);
+    padding: 10px 15px;
+    border-radius: 100px;
+  }
+
+  .navbar-link:is(:hover, :focus, .active) {
+    background-color: var(--blue-crayola);
+    color: var(--white);
+  }
+
+  /* === Hero === */
+  .hero .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .hero-content {
+    margin-block-end: 0;
+  }
+
+  /* === Market === */
+  .market-tab {
+    padding-block-end: 0;
+  }
+
+  /* === About === */
+  .about .container {
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .about-banner {
+    margin-block-end: 0;
+  }
+
+  /* === App === */
+  .app {
+    padding-block: 0;
+  }
+
+  .app .container {
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    align-items: flex-end;
+    gap: 30px;
+  }
+
+  .app-banner {
+    margin-block-start: 0;
+  }
+
+  .app-content {
+    margin-block: 50px;
+  }
+}
+
+/**
+ * ────── responsive for large than 1200px screen
+ */
+@media (min-width: 1200px) {
+  /* === Custom Property === */
+
+  :root {
+    /* === Typography === */
+    --fs-1: 6.4rem;
+    --fs-2: 4.8rem;
+  }
+
+  /* === Reused Styles === */
+  .container {
+    max-width: 1280px;
+  }
+
+  /* === Header === */
+  .navbar-link {
+    font-size: unset;
+  }
+
+  /* === Hero === */
+  .hero .container {
+    gap: 100px;
+  }
+
+  /* === Trend === */
+  .trend-tab .tab-content {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* === Instruction === */
+  .instruction-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .instruction-list > li:nth-child(even) .instruction-card::after {
+    display: block;
+  }
+
+  .instruction-list > li:last-child .instruction-card::after {
+    display: none;
+  }
+
+  /* === About. App === */
+  :is(.about, .app) .container {
+    gap: 60px;
+  }
+
+  /* === App === */
+  .app-content {
+    margin-block: 100px;
+  }
+
+  /* === Footer === */
+  .footer-top {
+    padding-block: 100px 90px;
+  }
+
+  .footer-top .container {
+    grid-template-columns: 1fr 0.5fr 0.5fr 0.5fr 0.5fr;
+  }
+
+  .footer-brand {
+    grid-column: auto;
+  }
+}
